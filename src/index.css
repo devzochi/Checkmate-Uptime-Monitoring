@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+/* Global design tokens. Tailwind utilities in tailwind.config.js read these values. */
+:root {
+  --color-primary: 249 115 22;
+  --color-primary-dark: 234 88 12;
+  --color-success: 34 197 94;
+  --color-warning: 245 158 11;
+  --color-danger: 239 68 68;
+  --color-page: 10 11 16;
+  --color-surface: 19 22 29;
+  --color-surface-muted: 31 35 48;
+  --color-border-strong: 46 52 69;
+  --color-text-muted: 148 163 184;
+  --color-accent-blue: 56 189 248;
+  --color-accent-red: 248 113 113;
+  --color-charcoal-950: 10 11 16;
+  --color-charcoal-900: 17 24 39;
+  --color-charcoal-800: 31 41 55;
+  --color-charcoal-700: 55 65 81;
+  --color-charcoal-600: 75 85 99;
+  --radius-card: 1rem;
+  --shadow-card: 0 18px 48px rgb(0 0 0 / 0.18);
+  --shadow-glow-blue: 0 0 0 1px rgba(147, 40, 8, 0.18), 0 15px 35px rgb(56 189 248 / 0.2);
+  --transition-fast: 160ms ease;
+}
