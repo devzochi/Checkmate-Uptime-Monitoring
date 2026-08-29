@@ -111,8 +111,6 @@ const Login = () => {
                 Continue to your uptime monitoring workspace.
               </p>
 
-              {/* OAuth buttons */}
-
               <div className="mt-6 flex justify-center gap-3">
 
                 <button
@@ -138,7 +136,7 @@ const Login = () => {
                 <span className="h-px flex-1 bg-charcoal-800" />
 
                 <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">
-                  or use email
+                  
                 </span>
 
                 <span className="h-px flex-1 bg-charcoal-800" />
