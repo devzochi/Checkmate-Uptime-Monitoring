@@ -89,6 +89,15 @@ const SignUp = () => {
 
       console.log("Signup successful:", data);
 
+      sessionStorage.setItem(
+        "profileDraft",
+        JSON.stringify({
+          firstName: form.firstName,
+          lastName: form.lastName,
+          email: form.email,
+        }),
+      );
+
       // Registration succeeded.
       // Send the user to the login page.
       navigate("/login");
