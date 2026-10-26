@@ -1,31 +1,31 @@
 import api from "./api";
 
 export const getServices = async () => {
-  try {
-    const response = await api.get("/api/services/3");
-
-    console.info("[Services API] Backend response:", response.data);
-    return response.data;
-  } catch (error) {
-    console.error(
-      "[Services API] Backend error:",
-      error.response?.data ?? error.message,
-    );
-    throw error;
-  }
+  const response = await api.get("/api/services/");
+  return response.data;
 };
 
-export const getUptime = async () => {
-  try {
-    const response = await api.get("/api/services/3/uptime/");
-
-    console.info("[Uptime API] Backend response:", response.data);
-    return response.data;
-  } catch (error) {
-    console.error(
-      "[Services API] Backend error:",
-      error.response?.data ?? error.message,
-    );
-    throw error;
-  }
+export const createService = async ({ name, url, organization }) => {
+  const payload = { name, url };
+  if (organization !== undefined && organization !== null) payload.organization = organization;
+  const response = await api.post("/api/services/", payload);
+  return response.data;
 };
+
+export const getService = async (id) => (await api.get(`/api/services/${id}`)).data;
+
+export const updateService = async (id, { name, url }) =>
+  (await api.put(`/api/services/${id}`, { name, url })).data;
+
+export const deleteService = async (id) => {
+  await api.delete(`/api/services/${id}`);
+};
+
+export const getUptime = async (id) =>
+  (await api.get(`/api/services/${id}/uptime/`)).data;
+
+export const getResponseTime = async (id) =>
+  (await api.get(`/api/services/${id}/response-time/`)).data;
+
+export const getIncidents = async (id) =>
+  (await api.get(`/api/services/${id}/incidents/`)).data;
